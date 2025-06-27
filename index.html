@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Power Inc. | Visa Extension Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <header class="text-center mb-4">
+            <div class="text-end mb-3">
+                <button id="lang-toggle-btn" class="btn btn-sm btn-outline-secondary" data-key="lang_toggle">日本語</button>
+            </div>
+            <h1 class="display-5" data-key="main_title">Visa Extension Application Helper</h1>
+            <p class="lead text-muted" data-key="main_subtitle">For APPLICATION FOR EXTENSION OF PERIOD OF STAY</p>
+        </header>
+
+        <div class="accordion" id="visaFormAccordion">
+            <!-- Step 1: Personal Information -->
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"><strong data-key="step1_title">Step 1: Personal Information</strong></button></h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#visaFormAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="photoId" class="form-label">
+                                    <span data-key="label_photo">Your ID Photo</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_photo_title" title="ID Photo Requirements" data-key-content="popover_photo_content" data-bs-content="The photo must be 4cm tall x 3cm wide. It should be taken within the last 3 months against a plain background. Do not wear a hat. Write your name on the back of the physical photo before attaching it to the paper form."></i>
+                                </label>
+                                <input class="form-control" type="file" id="photoId" accept="image/jpeg, image/png">
+                                <div class="form-text" data-key="photo_specs">4cm x 3cm, taken within 3 months.</div>
+                            </div>
+                             <div class="col-md-4 mb-3">
+                                <label for="nationality" class="form-label">
+                                    <span data-key="label_nationality">Nationality / Region</span>
+                                     <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_nationality_title" title="Nationality" data-key-content="popover_nationality_content" data-bs-content="Enter the country of your citizenship as shown on your passport."></i>
+                                </label>
+                                <input type="text" class="form-control" id="nationality">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="dob" class="form-label">
+                                    <span data-key="label_dob">Date of Birth</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_dob_title" title="Date of Birth" data-key-content="popover_dob_content" data-bs-content="Select your date of birth. The form will automatically split it into Year, Month, and Day."></i>
+                                </label>
+                                <input type="date" class="form-control" id="dob">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="familyName" class="form-label">
+                                    <span data-key="label_family_name">Family Name</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_name_title" title="Full Name" data-key-content="popover_name_content" data-bs-content="Enter your name EXACTLY as it is written on your passport or residence card."></i>
+                                </label>
+                                <input type="text" class="form-control" id="familyName">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="givenName" class="form-label">
+                                    <span data-key="label_given_name">Given Name</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_name_title" title="Full Name" data-key-content="popover_name_content" data-bs-content="Enter your name EXACTLY as it is written on your passport or residence card."></i>
+                                </label>
+                                <input type="text" class="form-control" id="givenName">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-3">
+                                 <label class="form-label d-block" data-key="label_sex">Sex</label>
+                                 <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="sex" id="sexMale" value="Male" checked><label class="form-check-label" for="sexMale" data-key="sex_male">Male</label></div>
+                                 <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="sex" id="sexFemale" value="Female"><label class="form-check-label" for="sexFemale" data-key="sex_female">Female</label></div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label d-block" data-key="label_marital_status">Marital Status</label>
+                                <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="maritalStatus" id="maritalMarried" value="Married"><label class="form-check-label" for="maritalMarried" data-key="marital_married">Married</label></div>
+                                <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="maritalStatus" id="maritalSingle" value="Single" checked><label class="form-check-label" for="maritalSingle" data-key="marital_single">Single</label></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="homeTown" class="form-label">
+                                    <span data-key="label_hometown">Home Town/City</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_hometown_title" title="Home Town/City" data-key-content="popover_hometown_content" data-bs-content="Enter the name of the city you are from in your home country."></i>
+                                </label>
+                                <input type="text" class="form-control" id="homeTown">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="addressJapan" class="form-label">
+                                    <span data-key="label_address_japan">Address in Japan</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_address_title" title="Address in Japan" data-key-content="popover_address_content" data-bs-content="Enter your current address that should be on either the front or back of your Residence Card (在留カード). Romanji is OK"></i>
+                                </label>
+                                <input type="text" class="form-control" id="addressJapan" placeholder="As written on your Residence Card">
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-md-6 mb-3"><label for="telNo" class="form-label" data-key="label_tel">Telephone No.</label><input type="text" class="form-control" id="telNo"></div>
+                            <div class="col-md-6 mb-3"><label for="cellularNo" class="form-label" data-key="label_cellular">Cellular Phone No.</label><input type="text" class="form-control" id="cellularNo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"><strong data-key="step2_title">Step 2: Passport & Residence Status</strong></button></h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#visaFormAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3"><label for="passportNumber" class="form-label" data-key="label_passport_number">Passport Number</label><input type="text" class="form-control" id="passportNumber"></div>
+                            <div class="col-md-6 mb-3"><label for="passportExpiry" class="form-label" data-key="label_passport_expiry">Passport Expiry Date</label><input type="date" class="form-control" id="passportExpiry"></div>
+                        </div>
+                        <div class="row">
+                             <div class="col-md-4 mb-3"><label class="form-label" data-key="label_current_status">Current Status</label><input type="text" class="form-control" value="Instructor" readonly></div>
+                             <div class="col-md-4 mb-3">
+                                <label for="currentPeriod" class="form-label">
+                                    <span data-key="label_current_period">Current Period of Stay</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_current_period_title" title="Period of Stay" data-key-content="popover_current_period_content" data-bs-content="This is listed on your Residence Card. It will likely say '1年' (1 Year), '3年' (3 Years), or '5年' (5 Years)."></i>
+                                </label>
+                                <input type="text" class="form-control" id="currentPeriod" placeholder="e.g., 1年 (1 Year)">
+                            </div>
+                             <div class="col-md-4 mb-3">
+                                <label for="visaExpiry" class="form-label">
+                                    <span data-key="label_visa_expiry">Date of Expiration</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_visa_expiry_title" title="Date of Expiration (満了日)" data-key-content="popover_visa_expiry_content" data-bs-content="This is the date your current period of stay ends. It is written on the front of your Residence Card."></i>
+                                </label>
+                                <input type="date" class="form-control" id="visaExpiry">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="residenceCardNumber" class="form-label">
+                                    <span data-key="label_residence_card">Residence Card Number</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_residence_card_title" title="Residence Card Number" data-key-content="popover_residence_card_content" data-bs-content="This is the 12-character number located in the top-right corner of your Residence Card."></i>
+                                </label>
+                                <input type="text" class="form-control" id="residenceCardNumber" maxlength="12">
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="desiredLength" class="form-label">
+                                    <span data-key="label_desired_length">Desired Length of Extension</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_desired_length_title" title="Desired Length" data-key-content="popover_desired_length_content" data-bs-content="You can request a period like '1年' (1 Year) or '3年' (3 Years). The final decision is made by immigration. It's common to request the same or a longer period than you currently have."></i>
+                                </label>
+                                <input type="text" class="form-control" id="desiredLength" placeholder="e.g., 1年 (1 Year), 3年 (3 Years)">
+                            </div>
+                        </div>
+                         <div class="mb-3">
+                             <label class="form-label">
+                                 <span data-key="label_criminal_record">Criminal Record</span>
+                                <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_criminal_record_title" title="Criminal Record" data-key-content="popover_criminal_record_content" data-bs-content="This includes ANY disposition for a crime, both in Japan and overseas. This includes traffic violations like speeding tickets. If you have ever been fined or received a penalty, you must select 'Yes' and explain. Honesty is crucial."></i>
+                             </label>
+                             <div class="form-check"><input class="form-check-input" type="radio" name="criminalRecord" id="criminalNo" value="No" checked><label class="form-check-label" for="criminalNo" data-key="criminal_no">No</label></div>
+                             <div class="form-check"><input class="form-check-input" type="radio" name="criminalRecord" id="criminalYes" value="Yes"><label class="form-check-label" for="criminalYes" data-key="criminal_yes">Yes</label></div>
+                             <textarea class="form-control mt-2" id="criminalDetails" rows="2" placeholder="If yes, provide details here..." style="display: none;"></textarea>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"><strong data-key="step3_title">Step 3: Education & Work History</strong></button></h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#visaFormAccordion">
+                    <div class="accordion-body">
+                        <h5 data-key="h5_education">Education (Last School Graduated)</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" data-key="label_edu_location">Location of School</label>
+                                <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="eduLocation" id="eduJapan" value="Japan"><label class="form-check-label" for="eduJapan" data-key="edu_japan">Japan</label></div>
+                                <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="eduLocation" id="eduForeign" value="Foreign" checked><label class="form-check-label" for="eduForeign" data-key="edu_foreign">Foreign Country</label></div>
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="schoolName" class="form-label" data-key="label_school_name">Name of School</label>
+                                <input type="text" class="form-control" id="schoolName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" data-key="label_edu_level">Highest Level of Education</label>
+                                <select id="educationLevel" class="form-select">
+                                    <option value="bachelor" data-type="university" selected>Bachelor's Degree</option>
+                                    <option value="master" data-type="university">Master's Degree</option>
+                                    <option value="doctor" data-type="university">Doctorate (PhD)</option>
+                                    <option value="junior_college" data-type="university">Junior College</option>
+                                    <option value="college_of_tech" data-type="tech">College of Technology</option>
+                                    <option value="senior_high_school" data-type="other">Senior High School</option>
+                                    <option value="junior_high_school" data-type="other">Junior High School</option>
+                                    <option value="other" data-type="other">Other</option>
+                                </select>
+                                <input type="text" class="form-control mt-2" id="educationOtherDetail" placeholder="If Other, specify here" style="display: none;">
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="gradDate" class="form-label" data-key="label_grad_date">Date of Graduation</label>
+                                <input type="date" class="form-control" id="gradDate">
+                            </div>
+                        </div>
+                        <div id="universityMajorSection" class="mt-2">
+                            <label for="universityMajor" class="form-label" data-key="label_major_uni">Major Field of Study (for University/Jr. College)</label>
+                            <select id="universityMajor" class="form-select">
+                                <option value="business_admin">Business Administration</option>
+                                <option value="sociology">Sociology</option>
+                                <option value="literature">Literature</option>
+                                <option value="linguistics">Linguistics</option>
+                                <option value="education">Education</option>
+                                <option value="science">Science</option>
+                                <option value="medicine">Medicine</option>
+                                <option value="law">Law</option>
+                                <option value="economics">Economics</option>
+                                <option value="politics">Politics</option>
+                                <option value="commercial_science">Commercial Science</option>
+                                <option value="history">History</option>
+                                <option value="psychology">Psychology</option>
+                                <option value="science_of_art">Science of Art</option>
+                                <option value="other_cultural_social_science">Other (Cultural/Social Science)</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="fisheries">Fisheries</option>
+                                <option value="pharmacy">Pharmacy</option>
+                                <option value="dentistry">Dentistry</option>
+                                <option value="other_natural_science">Other (Natural Science)</option>
+                                <option value="sports_science">Sports Science</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="text" class="form-control mt-2" id="universityOtherMajorDetail" placeholder="If Other, specify here" style="display: none;">
+                        </div>
+                        <div id="collegeTechMajorSection" class="mt-2" style="display: none;">
+                             <label for="collegeTechMajor" class="form-label" data-key="label_major_tech">Major Field of Study (for College of Technology)</label>
+                            <select id="collegeTechMajor" class="form-select">
+                                <option value="engineering">Engineering</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="medical">Medical services / Hygienics</option>
+                                <option value="education_social_welfare">Education / Social welfare</option>
+                                <option value="law">Law</option>
+                                <option value="commercial_business">Practical commercial business</option>
+                                <option value="home_economics">Dress design / Home economics</option>
+                                <option value="culture_education">Culture / Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                             <input type="text" class="form-control mt-2" id="collegeTechOtherMajorDetail" placeholder="If Other, specify here" style="display: none;">
+                        </div>
+                        <hr>
+                        <h5 data-key="h5_work_history">Work History (including current)</h5>
+                        <div id="work-history-container"></div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" id="add-work-history" data-key="add_work_btn">+ Add Previous Work</button>
+                        <hr>
+                         <h5 data-key="h5_instructor_info">Instructor-Specific Information</h5>
+                        <div class="row">
+                           <div class="col-md-4 mb-3">
+                                <label class="form-label" data-key="label_teacher_cert">Teacher's Certificate</label>
+                                <div class="form-check"><input class="form-check-input" type="radio" name="teacherCert" id="certYes" value="Yes"><label class="form-check-label" for="certYes" data-key="cert_yes">Yes</label></div>
+                                <div class="form-check"><input class="form-check-input" type="radio" name="teacherCert" id="certNo" value="No" checked><label class="form-check-label" for="certNo" data-key="cert_no">No</label></div>
+                           </div>
+                           <div class="col-md-4 mb-3">
+                                <label for="teachingExp" class="form-label">
+                                    <span data-key="label_teaching_exp">Teaching Experience (Years)</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_teaching_exp_title" title="Teaching Experience" data-key-content="popover_teaching_exp_content" data-bs-content="Enter the total number of years you have formally taught the subject you will teach in Japan (English)."></i>
+                                </label>
+                                <input type="number" class="form-control" id="teachingExp">
+                            </div>
+                           <div class="col-md-4 mb-3">
+                                <label for="engEduYears" class="form-label">
+                                    <span data-key="label_eng_edu">Years of English Education Received</span>
+                                   <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_eng_edu_title" title="Education in English" data-key-content="popover_eng_edu_content" data-bs-content="Enter the total number of years you received your own education (e.g., elementary through university) where the primary language of instruction was English."></i>
+                                </label>
+                                <input type="number" class="form-control" id="engEduYears">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"><strong data-key="step4_title">Step 4: Place of Work</strong></button></h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#visaFormAccordion">
+                    <div class="accordion-body">
+                         <h5 data-key="h5_boe">Place of Work (Board of Education)</h5>
+                        <div class="mb-3">
+                            <label for="boeSelect" class="form-label">
+                                <span data-key="label_boe_select">Select your main Board of Education</span>
+                                <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_boe_select_title" title="Board of Education (BOE)" data-key-content="popover_boe_select_content" data-bs-content="Select the city/town where you primarily work. This will automatically fill in the address, phone number, and other official details for that BOE on the application form."></i>
+                            </label>
+                            <select class="form-select" id="boeSelect">
+                                <option selected disabled data-key="boe_select_option">-- Please Select --</option>
+                                <option value="suita">Suita City (吹田市)</option>
+                                <option value="takatsuki">Takatsuki City (高槻市)</option>
+                                <option value="sango">Sango Town (三郷町)</option>
+                                <option value="heguri">Heguri Town (平群町)</option>
+                                <option value="ikeda">Ikeda City (池田市)</option>
+                                <option value="otani">Otani Jr/Sr High School (大谷中学校・高等学校)</option>
+                            </select>
+                        </div>
+                        <h5 class="mt-4" data-key="h5_school_list">List of Schools You Work At</h5>
+                        <p class="text-danger fw-bold" data-key="school_list_desc">You must list at least one school you work at. Use Google Maps to find the address. If you don't know the phone number, please contact Brain Power.</p>
+                        <div id="school-list-container"></div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" id="add-school-btn" data-key="add_school_btn">+ Add School</button>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"><strong data-key="step5_title">Step 5: Family in Japan & Co-habitants</strong></button></h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#visaFormAccordion">
+                    <div class="accordion-body">
+                        <h5 data-key="h5_family_japan">Family in Japan & Co-habitants
+                            <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_family_title" title="Family in Japan" data-key-content="popover_family_content" data-bs-content="List any relatives (spouse, child, parent, sibling, etc.) or non-relatives (roommate, partner) who live with you or live elsewhere in Japan. If you live alone, you do not need to fill this out."></i>
+                        </h5>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="hasFamilyInJapan">
+                            <label class="form-check-label" for="hasFamilyInJapan" data-key="switch_family_japan">I have family members or co-habitants in Japan.</label>
+                        </div>
+                        <div id="family-container" style="display:none;">
+                            <!-- Family member blocks will be inserted here -->
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="add-family-member-btn" data-key="add_family_btn" style="display:none;">+ Add Family Member</button>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"><strong data-key="step6_title">Step 6: Finalization</strong></button></h2>
+                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#visaFormAccordion">
+                    <div class="accordion-body">
+                        <h5 data-key="h5_salary_info">Salary Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                 <label for="monthlySalary" class="form-label" data-key="label_monthly_salary">Your Monthly Salary (before tax)</label>
+                                 <div class="input-group">
+                                    <input type="number" class="form-control" id="monthlySalary" value="220000">
+                                    <span class="input-group-text">JPY</span>
+                                 </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                 <label for="contractPeriod" class="form-label">
+                                    <span data-key="label_contract_period">Your Contract Period (Months)</span>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_contract_period_title" title="Contract Period" data-key-content="popover_contract_period_content" data-bs-content="This is the length of your employment contract for the upcoming period. For a standard one-year renewal, this would be 12 months."></i>
+                                 </label>
+                                 <input type="number" class="form-control" id="contractPeriod" value="12" placeholder="e.g. 12 for a 1-year contract">
+                            </div>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                           <strong data-key="alert_ready_strong">You're all set!</strong> <span data-key="alert_ready_text">Please review all your entered information carefully. When you are ready, click the button below to generate your completed visa application form.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End Accordion -->
+
+        <div class="d-grid gap-2 col-md-6 mx-auto mt-5">
+            <button type="button" id="generatePdfBtn" class="btn btn-primary btn-lg">
+                <span id="btn-text" data-key="generate_forms_btn">Generate My Application Forms</span>
+                <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Templates -->
+    <template id="school-template">
+        <div class="p-3 border rounded mb-3 bg-light school-block">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-end">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="this.closest('.school-block').remove()"></button>
+                </div>
+                <div class="col-md-12 mb-3"><label class="form-label"><span data-key="label_school_name">School Name</span></label><input type="text" class="form-control school-name"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mb-3"><label class="form-label"><span data-key="label_school_address">School Address</span></label><input type="text" class="form-control school-address"></div>
+                <div class="col-md-4 mb-3"><label class="form-label"><span data-key="label_school_phone">School Phone</span></label><input type="text" class="form-control school-phone"></div>
+            </div>
+        </div>
+    </template>
+    <template id="work-history-template">
+        <div class="p-3 border rounded mb-3 bg-light work-block">
+            <div class="row">
+                 <div class="col-12 d-flex justify-content-end">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="this.closest('.work-block').remove()"></button>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label class="form-label"><span data-key="label_company_name">Company Name</span></label>
+                    <input type="text" class="form-control work-company-name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><span data-key="label_start_date">Start Date</span></label>
+                    <div class="input-group">
+                        <input type="number" class="form-control work-start-year" placeholder="Year" min="1950" max="2100">
+                        <input type="number" class="form-control work-start-month" placeholder="Month" min="1" max="12">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                     <label class="form-label"><span data-key="label_end_date">End Date</span></label>
+                    <div class="input-group">
+                        <input type="number" class="form-control work-end-year" placeholder="Year" min="1950" max="2100">
+                        <input type="number" class="form-control work-end-month" placeholder="Month" min="1" max="12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="family-member-template">
+        <div class="p-3 border rounded mb-3 bg-light family-block">
+             <div class="row">
+                <div class="col-12 d-flex justify-content-end">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="this.closest('.family-block').remove()"></button>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><span data-key="th_name">Name</span></label>
+                    <input type="text" class="form-control family-name">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><span data-key="th_relationship">Relationship</span></label>
+                    <input type="text" class="form-control family-relationship" data-key-placeholder="placeholder_family_rel" placeholder="e.g., Spouse, Child">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><span data-key="th_dob">Birth Date</span></label>
+                    <input type="date" class="form-control family-dob">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><span data-key="th_nationality">Nationality</span></label>
+                    <input type="text" class="form-control family-nationality">
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-md-8 mb-3">
+                    <label class="form-label"><span data-key="th_work_school">Place of Employment / School</span></label>
+                    <input type="text" class="form-control family-work-school">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label"><span data-key="th_cohabiting">Living with you?</span></label>
+                    <select class="form-select family-cohabiting">
+                        <option value="Yes" selected>Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"><span data-key="th_residence_card">Residence Card Number</span></label>
+                <input type="text" class="form-control family-residence-card" maxlength="12">
+            </div>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.js" defer></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="translations.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
