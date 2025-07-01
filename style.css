@@ -1,42 +1,183 @@
-body {
-    background-color: #f4f7f6;
-    font-family: 'Poppins', sans-serif;
+/* Define a modern, professional color palette */
+:root {
+    --bpi-blue: #005A9C; /* A deeper, more professional blue */
+    --bpi-blue-light: #E6F0F6; /* A very light blue for backgrounds/hovers */
+    --bpi-gray-light: #f8f9fa; /* Background color */
+    --bpi-gray-medium: #dee2e6; /* Borders */
+    --bpi-text-dark: #212529;
+    --bpi-text-muted: #6c757d;
+    --bpi-success: #198754;
+    --bpi-font: 'Poppins', sans-serif;
 }
 
+body {
+    background-color: var(--bpi-gray-light);
+    font-family: var(--bpi-font);
+    color: var(--bpi-text-dark);
+}
+
+/* Main container as a floating card */
 .container {
     max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem 2.5rem; /* More internal spacing */
+}
+
+/* Header Enhancements */
+.logo-icon {
+    font-size: 2.5rem;
+    color: var(--bpi-blue);
+    margin-bottom: 0.5rem;
+}
+
+h1.display-5 {
+    color: var(--bpi-text-dark);
+    font-weight: 600;
+}
+
+.lead {
+    color: var(--bpi-text-muted);
+}
+
+/* --- Accordion Redesign --- */
+.accordion {
+    --bs-accordion-border-width: 0; /* Remove default borders */
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23005A9C'%3e%3cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/%3e%3c/svg%3e");
+}
+
+.accordion-item {
+    border: 1px solid var(--bpi-gray-medium);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden; /* Important for border-radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
 }
 
 .accordion-button {
     font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bpi-blue);
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #e7f1ff;
-    color: #0c63e4;
+    background-color: var(--bpi-blue);
+    color: #ffffff;
+    box-shadow: none;
 }
 
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 90, 156, 0.25);
+}
+
+.accordion-body {
+    padding: 1.5rem;
+}
+
+
+/* --- Form Element Polish --- */
 .form-label {
     font-weight: 600;
-    color: #333;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--bpi-gray-medium);
+    border-radius: 6px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--bpi-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 90, 156, 0.2);
 }
 
 ::placeholder, .form-text {
-  color: #6c757d !important;
+  color: #8a929a !important;
   opacity: 1;
 }
 
 .info-icon {
     cursor: pointer;
-    color: #0d6efd;
+    color: var(--bpi-blue);
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
 }
 
-.table thead th {
-    font-size: 0.9rem;
+.info-icon:hover {
+    opacity: 1;
+}
+
+/* Polished Call-to-Action Button */
+#generatePdfBtn {
+    background-color: var(--bpi-blue);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    vertical-align: middle;
+    box-shadow: 0 4px 15px rgba(0, 90, 156, 0.2);
+    transition: all 0.2s ease-in-out;
 }
 
-.family-row input, .family-row select {
-    font-size: 0.9rem;
+#generatePdfBtn:hover {
+    background-color: #004B80; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 90, 156, 0.3);
+}
+
+/* Sub-block styling (for schools, work, family) */
+.school-block, .work-block, .family-block {
+    background-color: var(--bpi-blue-light);
+    border: 1px solid #d9e7f1;
+    border-left: 4px solid var(--bpi-blue);
+    border-radius: 6px;
+    padding: 1.25rem;
+}
+
+/* Alert styling */
+.alert-success {
+    background-color: #e8f3ec;
+    border-color: #d1e7dd;
+    color: #0f5132;
+    border-left: 4px solid var(--bpi-success);
+}
+
+/* --- Responsive Design for Mobile --- */
+/* Using Bootstrap's 'md' breakpoint. Styles apply to screens smaller than 768px. */
+@media (max-width: 767px) {
+    body {
+        /* Remove body background to let the container be the full view */
+        background-color: #ffffff;
+    }
+
+    .container {
+        /* Remove shadows and margins on mobile for an edge-to-edge feel */
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 1.5rem 1rem; /* Reduced padding for mobile */
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .header-main {
+        margin-bottom: 2rem !important; /* Reduce header margin */
+    }
+
+    h1.display-5 {
+        font-size: 2rem; /* Scale down the main title */
+    }
+    
+    .accordion-body {
+        padding: 1.25rem 0.5rem; /* Tighter padding inside accordion on mobile */
+    }
+
+    .d-grid {
+        padding: 0 0.5rem; /* Add padding to the button container */
+    }
 }
