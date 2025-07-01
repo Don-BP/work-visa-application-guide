@@ -28,22 +28,14 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#visaFormAccordion">
                     <div class="accordion-body">
                         <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label for="photoId" class="form-label">
-                                    <span data-key="label_photo">Your ID Photo</span>
-                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_photo_title" title="ID Photo Requirements" data-key-content="popover_photo_content" data-bs-content="The photo must be 4cm tall x 3cm wide. It should be taken within the last 3 months against a plain background. Do not wear a hat. Write your name on the back of the physical photo before attaching it to the paper form."></i>
-                                </label>
-                                <input class="form-control" type="file" id="photoId" accept="image/jpeg, image/png">
-                                <div class="form-text" data-key="photo_specs">4cm x 3cm, taken within 3 months.</div>
-                            </div>
-                             <div class="col-md-4 mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="nationality" class="form-label">
                                     <span data-key="label_nationality">Nationality / Region</span>
                                      <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_nationality_title" title="Nationality" data-key-content="popover_nationality_content" data-bs-content="Enter the country of your citizenship as shown on your passport."></i>
                                 </label>
                                 <input type="text" class="form-control" id="nationality">
                             </div>
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="dob" class="form-label">
                                     <span data-key="label_dob">Date of Birth</span>
                                     <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_dob_title" title="Date of Birth" data-key-content="popover_dob_content" data-bs-content="Select your date of birth. The form will automatically split it into Year, Month, and Day."></i>
@@ -62,7 +54,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="givenName" class="form-label">
                                     <span data-key="label_given_name">Given Name</span>
-                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_name_title" title="Full Name" data-key-content="popover_name_content" data-bs-content="Enter your name EXACTLY as it is written on your passport or residence card."></i>
+                                    <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="popover" data-key-title="popover_name_title" title="Full Name" data-key-content="popover_name_content" data-bs-content="Enter your name EXACTLY as it is written on your passport or residence card. If you have any middle names, include them here after your first name."></i>
                                 </label>
                                 <input type="text" class="form-control" id="givenName">
                             </div>
@@ -102,6 +94,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Rest of the accordion items remain the same... -->
             <div class="accordion-item">
                 <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"><strong data-key="step2_title">Step 2: Passport & Residence Status</strong></button></h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#visaFormAccordion">
